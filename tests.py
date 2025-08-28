@@ -1,21 +1,17 @@
-from functions.get_files_info import *
+from functions.get_file_content import get_file_content
+from functions.config import MAX_CHARS
 
 cases = [
-    ("calculator", "."),
-    ("calculator", "pkg"),
-    ("calculator", "/bin"),
-    ("calculator", "../")
+    ("calculator", "lorem.txt"),
+    ("calculator", "main.py"),
+    ("calculator", "pkg/calculator.py"),
+    ("calculator", "/bin/cat"),
+    ("calculator", "pkg/does_not_exist.py")
 ]
 
-def run_cases(target, dir):
-    if dir == ".":
-        print("\n".join(
-            [f"Result for current directory:", get_files_info(target, dir)]
-        ))
-    else:
-        print("\n".join(
-            [f"Result for '{dir}' directory:", get_files_info(target, dir)]
-        ))
+def run_cases(target, file):
+    print(f"--- Getting content of '{file}' in '{target}' ---")
+    print(get_file_content(target, file))
 
 for case in cases:
     run_cases(*case)
