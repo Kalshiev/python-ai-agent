@@ -18,7 +18,7 @@ def get_files_info(working_directory, directory="."):
             file_path = os.path.join(full_path, file)
             file_size = os.path.getsize(file_path)
             file_is_dir = os.path.isdir(file_path)
-            formatted = f"{file}: file_size={file_size} bytes, is_dir={file_is_dir}"
+            formatted = f"- {file}: file_size={file_size} bytes, is_dir={file_is_dir}"
             formatted_files.append(formatted)
         
         return "\n".join(formatted_files)
