@@ -1,21 +1,15 @@
-from functions.get_files_info import *
+from functions.run_python import run_python_file as run
 
 cases = [
-    ("calculator", "."),
-    ("calculator", "pkg"),
-    ("calculator", "/bin"),
-    ("calculator", "../")
+    ("calculator", "main.py"),
+    ("calculator", "main.py", ["3 + 5"]),
+    ("calculator", "tests.py"),
+    ("calculator", "../main.py"),
+    ("calculator", "nonexistent.py")
 ]
 
-def run_cases(target, dir):
-    if dir == ".":
-        print("\n".join(
-            [f"Result for current directory:", get_files_info(target, dir)]
-        ))
-    else:
-        print("\n".join(
-            [f"Result for '{dir}' directory:", get_files_info(target, dir)]
-        ))
+def run_cases(workspace, file, args=[]):
+    print(run(workspace, file, args))
 
 for case in cases:
     run_cases(*case)

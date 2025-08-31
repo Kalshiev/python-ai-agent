@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "python-ai-agent"]
+	url = .
+	fetch = +refs/heads/*:refs/remotes/python-ai-agent/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[remote "origin"]
+	url = https://github.com/Kalshiev/python-ai-agent.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
