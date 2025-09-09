@@ -66,11 +66,6 @@ def main():
                 break
                 
 
-                    #if function_call_result.parts[0].function_response.response is not None and "--verbose" in sys.argv:
-                        #print(f"-> {function_call_result.parts[0].function_response.response}")
-                    #elif function_call_result.parts[0].function_response.error is None and function_call_result.parts[0].function_response.response is None:
-                        #raise Exception("Fatal error occurred")
-
         except Exception as e:
             print(f"Error occurred: {e}")
 
